@@ -106,9 +106,9 @@ if (error) {
             <li key={obj._id} className=' grid grid-rows-1 m-2'>
               {edit === obj._id ? (
                 <div className='grid grid-cols-3 items-center gap-3'>
-                  <input value={edittext} className=' bg-gray-600 m-2 p-3 mr-4 h-8 w-34 rounded' onChange={(e) => setedittext(e.target.value)} />
-                  <button onClick={(e) => edittodo(e, obj._id)} className=' border-2 ml-2 hover:bg-blue-600 m-2 text-2xl   rounded'>Save</button>
-                  <button  className='float-end text-2xl  rounded  border-2  hover:bg-blue-600  m-2' onClick={() => setedit(null)}>Cancel</button>
+                  <input value={edittext} className=' bg-gray-600 m-2 p-3 mr-2 h-8 w-34 rounded' onChange={(e) => setedittext(e.target.value)} />
+                  <button onClick={(e) => edittodo(e, obj._id)} className=' border-2 ml-2 hover:bg-blue-600 m-2 text-2xl fixed    rounded'>Save</button>
+                  <button  className='float-end text-2xl  rounded  border-2  hover:bg-blue-600 fixed   m-2' onClick={() => setedit(null)}>Cancel</button>
                 </div>
               ) : (
                 <div className=" grid grid-cols-4">
@@ -119,9 +119,9 @@ if (error) {
                    className=' size-4 m-2'
                   />
                   
-                  <span className={` ${!obj.iscompleted ? '' :  ' line-through text-gray-600'} text-black text-2xl max-w-prose wrap-break-word text-3xl `  }>{obj.todo}</span>
-                  <button onClick={() => saveedit(obj)} className= ' border-2  hover:bg-blue-600  rounded m-2'>Edit</button>
-                  <button className='float-end text-2xl  border-2  hover:bg-blue-600 rounded m-2' onClick={() => deletetodo(obj._id)}>Delete</button>
+                  <span className={` ${!obj.iscompleted ? '' :  ' line-through text-gray-600'} text-black text-2xl max-w-prose wrap-break-word `  }>{obj.todo}</span>
+                  <button onClick={() => saveedit(obj)} className= ' border-2  hover:bg-blue-600  rounded m-2 fixed'>Edit</button>
+                  <button className='float-end text-2xl  border-2  hover:bg-blue-600 rounded m-2 fixed' onClick={() => deletetodo(obj._id)}>Delete</button>
                 </div>
               )}
             </li>
