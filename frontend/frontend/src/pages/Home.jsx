@@ -35,7 +35,7 @@ function Home() {
     e.preventDefault();
     if (!text.trim()) return;
     try {
-      const response = await axios.post('https://todo-list-g5b7.onrender.com', { todo: text, iscompleted: false });
+      const response = await axios.post('https://todo-list-g5b7.onrender.com/todo', { todo: text, iscompleted: false });
       addtodo([...todos, response.data]);
       addtext('');
     } catch (error) {
