@@ -46,7 +46,7 @@ function Home() {
   const edittodo = async (e, id) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`https://todo-list-g5b7.onrender.com/${id}`, { todo: edittext });
+      const response = await axios.put(`https://todo-list-g5b7.onrender.com/:${id}`, { todo: edittext });
       const updatedList = todos.map((obj) => (obj._id === id ? response.data : obj));
       addtodo(updatedList);
       setedit(null);
@@ -63,7 +63,7 @@ function Home() {
 
   const toggleTodo = async (obj) => {
     try {
-      const response = await axios.put(`https://todo-list-g5b7.onrender.com/${obj._id}`, {
+      const response = await axios.put(`https://todo-list-g5b7.onrender.com/:${obj._id}`, {
         iscompleted: !obj.iscompleted
       });
       addtodo(todos.map(item => (item._id === obj._id ? response.data : item)));
@@ -73,7 +73,7 @@ function Home() {
   };
 
   const deletetodo = async (id) => {
-    await axios.delete(`https://todo-list-g5b7.onrender.com/${id}`);
+    await axios.delete(`https://todo-list-g5b7.onrender.com/:${id}`);
     const updatedList = todos.filter((obj) => obj._id !== id);
     addtodo(updatedList);
   };
