@@ -8,7 +8,7 @@ app.use(express.json())
 env.config()
 
 app.use(cors({
-    origin:"  http://localhost:5173"
+    origin:"https://todo-list-rho-five-76.vercel.app"
 }))
 app.use('/',todoroutes)
 
