@@ -85,7 +85,7 @@ if (!loading) {
   return <h1 className='flex justify-center items-center h-screen bg-gray-50 text-3xl font-bold text-blue-600'>loading</h1>
 }
 if (error) {
- return <h1 className='flex justify-center items-center h-screen bg-gray-50 text-3xl font-bold text-blue-600' >{error}</h1>
+ return <h1 className='flex justify-center items-center h-screen bg-gray-50 text-3xl font-bold text-blue-600' >{error.message}</h1>
 }
   return (
     <div className='first-div  bg-white h-screen'>
