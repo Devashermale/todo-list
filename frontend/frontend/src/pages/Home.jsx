@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/');
+        const response = await axios.get('https://todo-list-g5b7.onrender.com');
         addtodo(response.data);
       } catch (error) {
         seterror(error);
@@ -35,7 +35,7 @@ function Home() {
     e.preventDefault();
     if (!text.trim()) return;
     try {
-      const response = await axios.post('http://localhost:5000/todo', { todo: text, iscompleted: false });
+      const response = await axios.post('https://todo-list-g5b7.onrender.com', { todo: text, iscompleted: false });
       addtodo([...todos, response.data]);
       addtext('');
     } catch (error) {
@@ -46,7 +46,7 @@ function Home() {
   const edittodo = async (e, id) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/todo/${id}`, { todo: edittext });
+      const response = await axios.put(`https://todo-list-g5b7.onrender.com/${id}`, { todo: edittext });
       const updatedList = todos.map((obj) => (obj._id === id ? response.data : obj));
       addtodo(updatedList);
       setedit(null);
@@ -63,7 +63,7 @@ function Home() {
 
   const toggleTodo = async (obj) => {
     try {
-      const response = await axios.put(`http://localhost:5000/todo/${obj._id}`, {
+      const response = await axios.put(`https://todo-list-g5b7.onrender.com/${obj._id}`, {
         iscompleted: !obj.iscompleted
       });
       addtodo(todos.map(item => (item._id === obj._id ? response.data : item)));
@@ -73,7 +73,7 @@ function Home() {
   };
 
   const deletetodo = async (id) => {
-    await axios.delete(`http://localhost:5000/todo/${id}`);
+    await axios.delete(`https://todo-list-g5b7.onrender.com/${id}`);
     const updatedList = todos.filter((obj) => obj._id !== id);
     addtodo(updatedList);
   };
