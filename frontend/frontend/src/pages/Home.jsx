@@ -120,7 +120,7 @@ if (error) {
                   
                   <span className={` ${!obj.iscompleted ? '' :  ' line-through text-gray-600'} text-black text-2xl max-w-prose wrap-break-word `  }>{obj.todo}</span>
                   <button onClick={() => saveedit(obj)} className= ' border px-4 py-2   hover:bg-blue-600  rounded m-2 '>Edit</button>
-                  <button className='float-end text-2xl  border  px-4 py-2  hover:bg-blue-600 rounded m-2' onClick={() => deletetodo(obj._id)}>Delete</button>
+                  <button className='float-end text-sm  border  px-4 py-2  hover:bg-blue-600 rounded m-2' onClick={() => deletetodo(obj._id)}>Delete</button>
                 </div>
               )}
             </li>
